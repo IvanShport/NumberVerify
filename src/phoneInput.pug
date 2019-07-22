@@ -1,0 +1,15 @@
+.phone_input
+    .phone_input__content
+        each sym in result
+            if sym.type === 'input'
+                input.phone_input__content__digit.phone_input__content__digit_theme_input(type='text', placeholder="_")
+            else if sym.type === 'hideX'
+                span.phone_input__content__digit.phone_input__content__digit_theme_any X
+            else if sym.type === 'hideStar'
+                span.phone_input__content__digit.phone_input__content__digit_theme_any ●
+            else if sym.type === 'digit'
+                span.phone_input__content__digit= sym.value
+            else
+                span= sym.value
+    .phone_input__error
+        | Неверный номер, попробуйте еще раз
